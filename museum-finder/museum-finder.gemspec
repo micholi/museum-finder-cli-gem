@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "museum/version"
+require "museum/finder/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "museum"
-  spec.version       = Museum::VERSION
+  spec.name          = "museum-finder"
+  spec.version       = Museum::Finder::VERSION
   spec.authors       = ["'Michelle Olivieri'"]
   spec.email         = ["'michelleo72@gmail.com'"]
 
