@@ -8,13 +8,14 @@ class MuseumFinder::CLI
       puts "The Smithsonian offers 17 museums, galleries, and a zoo in the Greater Washington, DC area and 2 additional museums in New York City."
       puts "\n"
       menu
+      museum_input
     end
 
     def menu
       # placeholder code for testing
       # update with revised code later
       puts "Which museum (or zoo) do you wish to explore further?"
-      puts "Please enter the number preceding its name for more information:"
+      # puts "Please enter the number preceding its name for more information:"
       puts "  [1] African American Museum"
       puts "  [2] African Art Museum"
       puts "  [3] Air and Space Museum"
@@ -40,11 +41,31 @@ class MuseumFinder::CLI
       puts "  [23] Smithsonian Gardens"
     end
 
-    def museum_info
+    def museum_input
+      puts "Please enter the number preceding its name for more information:"
       input = gets.strip
       case input
       when "1"
-        puts "More info on African American Museum"
+        puts "More info..."
+      when "2"
+        puts "More info..."
+      when "3"
+        puts "More info..."
+      when "4"
+        puts "More info..."
+      when "5"
+        puts "More info..."
+      when "6"
+        puts "More info..."
+      when "7"
+        puts "More info..."
+      when "8"
+        puts "More info..."
+      when "9"
+        puts "More info..."
+      when "10"
+        puts "More info..."
+      end
     end
 
 end
