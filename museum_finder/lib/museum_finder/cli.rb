@@ -9,6 +9,7 @@ class MuseumFinder::CLI
       puts "\n"
       menu
       museum_input
+      goodbye
     end
 
     def menu
@@ -43,6 +44,7 @@ class MuseumFinder::CLI
 
     def museum_input
       puts "Please enter the number preceding its name for more information:"
+      while input != "exit"
       input = gets.strip
       case input
       when "1"
@@ -66,6 +68,11 @@ class MuseumFinder::CLI
       when "10"
         puts "More info..."
       end
+    end
+    end
+
+    def goodbye
+      puts "Thanks for exploring the Smithsonian Institution. Hope you enjoy your visit!"
     end
 
 end
