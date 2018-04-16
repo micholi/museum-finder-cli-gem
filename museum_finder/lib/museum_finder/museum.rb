@@ -1,9 +1,14 @@
 class MuseumFinder::Museum
 
-  def self.museum_finder
-    # placeholder - may change
-    # put code here
-  end
+  attr_accessor :name, :location, :hours, :admission, :overview, :highlights, :transportation
 
+    def self.create_new_museum
+      # placeholder - may change
+      # put code here
+    end
+
+    def self.museum_info
+
+    end
 
 end
