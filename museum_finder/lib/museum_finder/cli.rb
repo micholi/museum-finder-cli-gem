@@ -40,4 +40,11 @@ class MuseumFinder::CLI
       puts "  [23] Smithsonian Gardens"
     end
 
+    def museum_info
+      input = gets.strip
+      case input
+      when "1"
+        puts "More info on African American Museum"
+    end
+
 end

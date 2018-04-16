@@ -1,3 +1,5 @@
 #!usr/bin/env ruby
 
+require './lib/museum_finder'
+
 MuseumFinder::CLI.new.call
