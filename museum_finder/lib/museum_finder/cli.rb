@@ -11,7 +11,13 @@ class MuseumFinder::CLI
     end
 
     def menu
-      #put code here
+      # placeholder code for testing
+      # update with revised code later
+      puts "Which museum (or zoo) do you wish to explore further?"
+      puts "Please enter the number preceding its name for more information:"
+      puts "  [1] African American Museum"
+      puts "  [2] African Art Museum"
+      puts "  [3] Air and Space Museum"
     end
 
 end
