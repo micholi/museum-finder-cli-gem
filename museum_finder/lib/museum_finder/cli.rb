@@ -44,6 +44,7 @@ class MuseumFinder::CLI
 
     def museum_input
       puts "Please enter the number preceding its name for more information:"
+      input = nil
       while input != "exit"
       input = gets.strip
       case input
