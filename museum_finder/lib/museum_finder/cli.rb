@@ -17,6 +17,9 @@ class MuseumFinder::CLI
       # update with revised code later
       puts "Which museum (or zoo) do you wish to explore further?"
       # puts "Please enter the number preceding its name for more information:"
+      MuseumFinder::Museum.all.each_with_index do |museum, index|
+        puts "#{index + 1}. #{museum.name}"
+      end
       puts "  [1] African American Museum"
       puts "  [2] African Art Museum"
       puts "  [3] Air and Space Museum"
@@ -40,6 +43,7 @@ class MuseumFinder::CLI
       puts "  [21] Sackler Gallery"
       puts "  [22] Smithsonian Castle"
       puts "  [23] Smithsonian Gardens"
+    #end
     end
 
     def museum_input

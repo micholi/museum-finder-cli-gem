@@ -2,7 +2,7 @@
 
 # require './lib/museum_finder'
 
-require "bunder/setup"
+require "bundler/setup"
 require "museum_finder"
 
 MuseumFinder::CLI.new.call
