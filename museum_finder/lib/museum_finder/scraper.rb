@@ -36,6 +36,8 @@ class MuseumFinder::Scraper
       city = museum.css("div.location-address").children[2].text.strip
       hours = museum.css("div.location-hours").text.gsub(/\r\n/," - ").strip
       admission = museum.css("div.location-admission").text.delete("\n").strip
+
+      test = museum_page.css("div.info p").text if museum_page.css("div.info h2").text == "About"
     binding.pry
 
   end
