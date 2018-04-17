@@ -1,5 +1,8 @@
 #!usr/bin/env ruby
 
-require './lib/museum_finder'
+# require './lib/museum_finder'
+
+require "bunder/setup"
+require "museum_finder"
 
 MuseumFinder::CLI.new.call
