@@ -28,20 +28,19 @@ class MuseumFinder::Scraper
     end
     end
 
-  def self.scrape_museum_info_page
-    # placeholder for testing
+
+  def scrape_museum_page
+    # placeholder
     museum_page = Nokogiri::HTML(open("https://www.si.edu/museums/american-history-museum"))
-    museum_page.css("div.location-info").each do |museum|
+    museum_page.css("div.edan-record--location").each do |museum|
       address = museum.css("div.location-address").children[0].text.delete("\n").strip
       city = museum.css("div.location-address").children[2].text.strip
       hours = museum.css("div.location-hours").text.gsub(/\r\n/," - ").strip
       admission = museum.css("div.location-admission").text.delete("\n").strip
-
-      test = museum_page.css("div.info p").text if museum_page.css("div.info h2").text == "About"
-    binding.pry
+      about = museum.css("div.info p").children[0].text
+      highlights = museum.css("div.info p").children[1].text
+      binding.pry
+    end
+  end
 
   end
-  end
-
-
-end
