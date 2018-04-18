@@ -32,27 +32,27 @@ class MuseumFinder::Museum
     end
 
     def full_name
-      @full_name = doc.css("h1.page-title").text
+      @full_name ||= doc.css("h1.page-title").text
     end
 
     def hours
-      doc.css("div.location-hours").text.gsub(/\r\n/," - ").strip
+      @hours ||= doc.css("div.location-hours").text.gsub(/\r\n/," - ").strip
     end
 
     def admission
-      doc.css("div.location-admission").text.delete("\n").strip
+      @admission ||= doc.css("div.location-admission").text.delete("\n").strip
     end
 
     def description
-      doc.css("div.info p").children[0].text
+      @description ||= doc.css("div.info p").children[0].text
     end
 
     def highlights
-      doc.css("div.info p").children[1].text
+      @highlights ||= doc.css("div.info p").children[1].text
     end
 
-    def self.find(num)
-      @@all[num-1]
+    def self.find(number)
+      self.all[number-1]
     end
 
     def doc
