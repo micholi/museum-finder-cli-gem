@@ -1,7 +1,7 @@
 class MuseumFinder::CLI
 
   def call
-      MuseumFinder::Scraper.new.create_museums
+      MuseumFinder::Museum.create_museums
       greeting
       start
     end
