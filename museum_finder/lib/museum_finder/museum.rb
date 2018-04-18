@@ -36,7 +36,23 @@ class MuseumFinder::Museum
     end
 
 
-    def self.museum_info
+    def full_name
+
+    end
+
+    def hours
+
+    end
+
+    def admission
+
+    end
+
+    def description
+
+    end
+
+    def highlights
 
     end
 
