@@ -1,24 +1,12 @@
 class MuseumFinder::Scraper
 
-  def self.get_landing_page
+  def self.get_page
     museums_landing = Nokogiri::HTML(open("https://www.si.edu/museums"))
   end
 
   def self.scrape_landing_page
-    self.get_landing_page.css("div.content")
+    self.get_page.css("div.content")
   end
-
-  def self.scrape_url
-    museums_landing = Nokogiri::HTML(open("https://www.si.edu/museums"))
-
-
-    link = museums_landing.css("h3.title").children.css("a").map { |x| x.attribute('href').value}
-      link.each do |y|
-      url = "https://si.edu/#{y}"
-
-    end
-    end
-
 
   def self.scrape_museum_page
     # placeholder
