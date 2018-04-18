@@ -19,7 +19,7 @@ class MuseumFinder::CLI
       elsif input == "menu"
         print_menu
       elsif input != "exit"
-        puts "I don't recognize your entry. Please try again.".colorize(:red)
+        puts "Sorry, I don't recognize your entry. Please try again.".colorize(:red)
       end
     end
     goodbye
@@ -63,7 +63,7 @@ class MuseumFinder::CLI
 
     def another_museum?
       puts "Would you like to see another museum? If you know the number, enter it below."
-      puts "Type 'menu' to return to the main menu or 'exit' to end this program."
+      puts "Type 'menu' to return to the Main Menu or 'exit' to end this program."
       puts "\n"
     end
 
