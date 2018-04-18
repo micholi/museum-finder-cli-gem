@@ -7,11 +7,23 @@ class MuseumFinder::CLI
     end
 
   def start
-      menu
-      museum_input
+      print_menu
+
+      input = nil
+      until input == "exit"
+      input = gets.strip
+
+      if input.to_i >= 1 && input.to_i <= MuseumFinder::Museum.all.length-1
+        museum = MuseumFinder::Museum.find(input.to_i)
+        print_museum(museum)
+      #  puts "Would you like to see another museum?"
+      end
+      #museum_input
       #print_museum(museum)
-      goodbye
+
     end
+    goodbye
+  end
 
     def greeting
       puts "\n"
@@ -23,36 +35,14 @@ class MuseumFinder::CLI
       puts "\n"
     end
 
-    def menu
-      # placeholder code for testing
-      # update with revised code later
+    def print_menu
       puts "Which museum (or zoo) do you wish to explore further?"
-      # puts "Please enter the number preceding its name for more information:"
       MuseumFinder::Museum.all.each_with_index do |museum, index|
         puts " #{index + 1}. #{museum.name}"
-
       end
+
       puts "\n"
       puts "Please enter the number preceding its name for more information:"
-    #end
-    end
-
-    def museum_input
-
-      input = nil
-      until input == "exit"
-      input = gets.strip
-
-      #puts "Type 'list' to view the complete list of museums."
-      #puts "Or type 'exit' to end this program."
-
-      #input = input.to_i
-      if input.to_i >= 1
-        museum = MuseumFinder::Museum.find(input.to_i)
-        print_museum(museum)
-        puts "Would you like to see another museum?"
-      end
-    end
     end
 
     def print_museum(museum)
@@ -60,7 +50,6 @@ class MuseumFinder::CLI
       puts "\n"
       puts "#{museum.description}"
       puts "\n"
-      #puts "Description: ".colorize(:yellow) + "#{museum.description}"
       puts "Highlights: ".colorize(:yellow) + "#{museum.highlights}"
       puts "Location: ".colorize(:yellow) + "#{museum.location}"
       puts "Hours: ".colorize(:yellow) + "#{museum.hours}"
