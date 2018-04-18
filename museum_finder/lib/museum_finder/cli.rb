@@ -48,6 +48,11 @@ class MuseumFinder::CLI
       puts "#{museum.full_name}".upcase.colorize(:light_blue)
       puts "\n"
       puts "Location: ".colorize(:yellow) + "#{museum.location}"
+      puts "Hours: ".colorize(:yellow) + "#{museum.hours}"
+      puts "Admission: ".colorize(:yellow) + "#{museum.admission}"
+      puts "Description: ".colorize(:yellow) + "#{museum.description}"
+      puts "Highlights: ".colorize(:yellow) + "#{museum.highlights}"
+      puts "\n"
     end
     end
 

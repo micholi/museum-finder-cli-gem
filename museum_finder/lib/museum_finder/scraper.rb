@@ -1,15 +1,11 @@
 class MuseumFinder::Scraper
 
-  def self.scrape_landing_page
+  def self.get_landing_page
     museums_landing = Nokogiri::HTML(open("https://www.si.edu/museums"))
-    #  museums_landing.css("h3.title")
-    #museums_landing.css("h3")
-    #museums_landing.css("div.inner")
-    museums_landing.css("div.content")
-  #    museum_name = museum.text
-  #    number = index + 1
-  #  end
-  #  end
+  end
+
+  def self.scrape_landing_page
+    self.get_landing_page.css("div.content")
   end
 
   def self.scrape_url
@@ -24,7 +20,7 @@ class MuseumFinder::Scraper
     end
 
 
-  def scrape_museum_page
+  def self.scrape_museum_page
     # placeholder
     museum_page = Nokogiri::HTML(open("https://www.si.edu/museums/american-history-museum"))
       museum_page.css("div.edan-record--location").each do |museum|
@@ -35,6 +31,8 @@ class MuseumFinder::Scraper
         admission = museum.css("div.location-admission").text.delete("\n").strip
         about = museum.css("div.info p").children[0].text
         highlights = museum.css("div.info p").children[1].text
+        transportation = museum.css("div.panel p").text
+        binding.pry
       end
   end
 

@@ -19,9 +19,6 @@ class MuseumFinder::Museum
     end
 
     def self.create_museums
-
-      # placeholder - may change
-      # put code here
       museums = MuseumFinder::Scraper.scrape_landing_page
 
         museums.css("div.b-text-wrapper").each do |m|
@@ -65,6 +62,10 @@ class MuseumFinder::Museum
     def highlights
       doc.css("div.info p").children[1].text
     end
+
+    #def transportation
+    #  doc.css("h3.panel-heading p").text
+    #end
 
     def doc
       @doc ||= Nokogiri::HTML(open(self.url))
