@@ -16,11 +16,11 @@ class MuseumFinder::CLI
       if input.to_i >= 1 && input.to_i <= MuseumFinder::Museum.all.length-1
         museum = MuseumFinder::Museum.find(input.to_i)
         print_museum(museum)
-      #  puts "Would you like to see another museum?"
+      elsif input == "menu"
+        print_menu
+      elsif input != "exit"
+        puts "I don't recognize your entry. Please try again.".colorize(:red)
       end
-      #museum_input
-      #print_museum(museum)
-
     end
     goodbye
   end
@@ -36,16 +36,17 @@ class MuseumFinder::CLI
     end
 
     def print_menu
-      puts "Which museum (or zoo) do you wish to explore further?"
+      puts "Which museum (or zoo) do you wish to view?".colorize(:light_blue)
       MuseumFinder::Museum.all.each_with_index do |museum, index|
         puts " #{index + 1}. #{museum.name}"
       end
-
       puts "\n"
-      puts "Please enter the number preceding its name for more information:"
+      puts "Please enter the number preceding its name for more information."
+      puts "Type 'exit' at any time to end this program."
     end
 
     def print_museum(museum)
+      puts "\n"
       puts "#{museum.full_name}".upcase.colorize(:light_blue)
       puts "\n"
       puts "#{museum.description}"
@@ -54,11 +55,20 @@ class MuseumFinder::CLI
       puts "Location: ".colorize(:yellow) + "#{museum.location}"
       puts "Hours: ".colorize(:yellow) + "#{museum.hours}"
       puts "Admission: ".colorize(:yellow) + "#{museum.admission}"
+      puts "More Info: ".colorize(:yellow) + "#{museum.url}"
       puts "\n"
+
+      another_museum?
+    end
+
+    def another_museum?
+      puts "Would you like to see another museum? Enter its number below."
+      puts "Type 'menu' to return to the main menu or 'exit' to end this program."
     end
 
     def goodbye
-      puts "Thanks for exploring the Smithsonian Institution. Hope you enjoy your visit!".colorize(:yellow)
+      puts "Thanks for exploring the Smithsonian Institution. Enjoy your visit!".colorize(:light_blue)
+      puts "\n"
     end
 
 end
