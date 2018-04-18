@@ -8,11 +8,16 @@ class MuseumFinder::Museum
       @name = name
       @url = url
       @location = location
-      @@all << self
+    #  @@all << self
     end
 
     def self.all
-      @@all
+      @@all ||= self.new_museum
+      binding.pry
+    end
+
+    def save
+      @@all << self
     end
 
     def self.new_museum
@@ -20,20 +25,17 @@ class MuseumFinder::Museum
       # placeholder - may change
       # put code here
       museums = MuseumFinder::Scraper.scrape_landing_page
-      #museums.css(".title").each do |museum|
-      museums.css("div.inner").each do |museum|
-        self.new(
-        museum.css("h3.title").text,
-        "https://www.si.edu#{museum.css("h3.title a").attribute("href").text}",
-        museum.css("p.location").text.delete("\n").strip
-        )
-binding.pry
 
-      #museums.css("h3.title").each do |museum|
-
-
+        museums.css("div.b-text-wrapper").each do |m|
+          museum = self.new(
+          m.css("h3.title").text,
+          "https://www.si.edu#{m.css("h3.title a").attribute("href").text}",
+          m.css("p.location").children[0].text.delete("\n").strip
+          )
+          museum.save
+        end
     end
-  end
+
 
     def self.museum_info
 
