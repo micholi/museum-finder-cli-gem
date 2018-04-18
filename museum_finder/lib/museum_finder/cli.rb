@@ -36,12 +36,12 @@ class MuseumFinder::CLI
     end
 
     def print_menu
-      puts "Which museum (or zoo) do you wish to view?".colorize(:light_blue)
+      puts "Which Smithsonian property do you wish to view?".colorize(:light_blue)
       MuseumFinder::Museum.all.each_with_index do |museum, index|
         puts " #{index + 1}. #{museum.name}"
       end
       puts "\n"
-      puts "Please enter the number preceding its name for more information."
+      puts "Please enter the number preceding the museum (or zoo) for more information."
       puts "Type 'exit' at any time to end this program."
     end
 
