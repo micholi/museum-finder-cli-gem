@@ -18,7 +18,7 @@ class MuseumFinder::Museum
       @@all << self
     end
 
-    def self.create_museums
+    def self.new_museum_from_landing_page
       museums = MuseumFinder::Scraper.scrape_landing_page
 
         museums.css("div.b-text-wrapper").each do |m|

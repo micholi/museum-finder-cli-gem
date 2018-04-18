@@ -8,4 +8,8 @@ class MuseumFinder::Scraper
     self.get_page.css("div.content")
   end
 
+  def create_museums
+    MuseumFinder::Museum.new_museum_from_landing_page
+  end
+
 end

@@ -1,8 +1,7 @@
 class MuseumFinder::CLI
 
   def call
-      # initial code for testing purposes
-      MuseumFinder::Museum.create_museums
+      MuseumFinder::Scraper.new.create_museums
       greeting
       start
     end
