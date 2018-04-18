@@ -62,8 +62,9 @@ class MuseumFinder::CLI
     end
 
     def another_museum?
-      puts "Would you like to see another museum? Enter its number below."
+      puts "Would you like to see another museum? If you know the number, enter it below."
       puts "Type 'menu' to return to the main menu or 'exit' to end this program."
+      puts "\n"
     end
 
     def goodbye
