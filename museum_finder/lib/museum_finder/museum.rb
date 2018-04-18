@@ -71,4 +71,8 @@ class MuseumFinder::Museum
       @doc ||= Nokogiri::HTML(open(self.url))
     end
 
+    def self.find(num)
+      @@all[num-1]
+    end
+
 end
