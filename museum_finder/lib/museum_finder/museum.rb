@@ -10,14 +10,6 @@ class MuseumFinder::Museum
       @location = location
     end
 
-    def self.all
-      @@all ||= self.new_museum
-    end
-
-    def save
-      @@all << self
-    end
-
     def self.new_museum_from_landing_page
       museums = MuseumFinder::Scraper.scrape_landing_page
 
@@ -30,6 +22,16 @@ class MuseumFinder::Museum
           museum.save
         end
     end
+
+    def self.all
+      @@all ||= self.new_museum
+    end
+
+    def save
+      @@all << self
+    end
+
+
 
 
     #museum_page = Nokogiri::HTML(open("https://www.si.edu/museums/american-history-museum"))
@@ -44,7 +46,6 @@ class MuseumFinder::Museum
 
     def full_name
       @full_name = doc.css("h1.page-title").text
-
     end
 
     def hours
@@ -67,12 +68,12 @@ class MuseumFinder::Museum
     #  doc.css("h3.panel-heading p").text
     #end
 
-    def doc
-      @doc ||= Nokogiri::HTML(open(self.url))
-    end
-
     def self.find(num)
       @@all[num-1]
+    end
+
+    def doc
+      @doc ||= Nokogiri::HTML(open(self.url))
     end
 
 end
