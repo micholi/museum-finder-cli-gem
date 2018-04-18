@@ -8,7 +8,6 @@ class MuseumFinder::Museum
       @name = name
       @url = url
       @location = location
-    #  @@all << self
     end
 
     def self.all

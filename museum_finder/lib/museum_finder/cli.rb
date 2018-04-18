@@ -4,8 +4,9 @@ class MuseumFinder::CLI
       # initial code for testing purposes
       MuseumFinder::Museum.create_museums
       greeting
-      menu
-      museum_input
+      #menu
+      #museum_input
+      print_museum
       goodbye
     end
 
@@ -24,7 +25,7 @@ class MuseumFinder::CLI
       puts "Which museum (or zoo) do you wish to explore further?"
       # puts "Please enter the number preceding its name for more information:"
       MuseumFinder::Museum.all.each_with_index do |museum, index|
-        puts "#{index + 1}. #{museum.name}"
+        puts " #{index + 1}. #{museum.name}"
       end
     #end
     end
@@ -37,25 +38,16 @@ class MuseumFinder::CLI
       case input
       when "1"
         puts "More info..."
-      when "2"
-        puts "More info..."
-      when "3"
-        puts "More info..."
-      when "4"
-        puts "More info..."
-      when "5"
-        puts "More info..."
-      when "6"
-        puts "More info..."
-      when "7"
-        puts "More info..."
-      when "8"
-        puts "More info..."
-      when "9"
-        puts "More info..."
-      when "10"
-        puts "More info..."
+
       end
+    end
+    end
+
+    def print_museum
+      MuseumFinder::Museum.all.each do |museum|
+      puts "#{museum.full_name}".upcase.colorize(:light_blue)
+      puts "\n"
+      puts "Location: ".colorize(:yellow) + "#{museum.location}"
     end
     end
 
