@@ -1,6 +1,4 @@
-#!usr/bin/env ruby
-
-# require './lib/museum_finder'
+#!/usr/bin/env ruby
 
 require "bundler/setup"
 require "museum_finder"
