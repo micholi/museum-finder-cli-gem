@@ -1,10 +1,6 @@
 # Smithsonian Museum Finder
 
-This Ruby gem provides a CLI that enables users to browse the museums and galleries (and zoo!) that are operated by the Smithsonian Institution. From the main menu, users can drill down on an individual museum and view information including a brief description, highlights, location, and hours.
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/museum_finder`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This Ruby gem provides a CLI that enables users to browse the museums and galleries (and zoo!) that are operated by the Smithsonian Institution. From the main menu, users can drill down to an individual museum and view information including a brief description, highlights, location, and hours.
 
 ## Installation
 
@@ -18,13 +14,15 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
+You can install this gem by entering the following:
 
-    $ gem install museum_finder
+    $ gem install museum-finder
 
 ## Usage
 
-TODO: Write usage instructions here
+Once you've installed the gem, enter the following and follow the instructions to interact with the CLI.
+
+  $ museum-finder
 
 ## Development
 
