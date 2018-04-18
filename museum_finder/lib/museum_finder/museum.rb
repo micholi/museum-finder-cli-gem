@@ -1,6 +1,6 @@
 class MuseumFinder::Museum
 
-  attr_accessor :name, :url, :location, :hours, :admission, :description, :highlights, :transportation
+  attr_accessor :name, :url, :location, :hours, :admission, :description, :highlights
 
   @@all = []
 
