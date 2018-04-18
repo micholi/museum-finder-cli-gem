@@ -13,7 +13,6 @@ class MuseumFinder::Museum
 
     def self.all
       @@all ||= self.new_museum
-      binding.pry
     end
 
     def save
