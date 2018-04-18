@@ -64,10 +64,6 @@ class MuseumFinder::Museum
       doc.css("div.info p").children[1].text
     end
 
-    #def transportation
-    #  doc.css("h3.panel-heading p").text
-    #end
-
     def self.find(num)
       @@all[num-1]
     end
