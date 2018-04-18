@@ -2,6 +2,7 @@ class MuseumFinder::CLI
 
   def call
       # initial code for testing purposes
+      MuseumFinder::Museum.create_museums
       greeting
       menu
       museum_input
@@ -9,7 +10,8 @@ class MuseumFinder::CLI
     end
 
     def greeting
-      puts "WELCOME TO THE SMITHSONIAN INSTITUTION!"
+      puts "\n"
+      puts "WELCOME TO THE SMITHSONIAN INSTITUTION!".colorize(:light_blue)
       puts "\n"
       puts "The Smithsonian Institution is the world's largest museum, education, and research complex."
       puts "The Smithsonian offers 17 museums, galleries, and a zoo in the Greater Washington, DC area and 2 additional museums in New York City."
