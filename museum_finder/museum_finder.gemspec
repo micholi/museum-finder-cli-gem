@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "museum_finder/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "museum_finder"
+  spec.name          = "museum-finder"
   spec.version       = MuseumFinder::VERSION
   spec.authors       = ["'Michelle Olivieri'"]
   spec.email         = ["'michelleo72@gmail.com'"]
 
-  spec.summary       = %q{Museum finder}
-  spec.description   = %q{Museum finder}
+  spec.summary       = "Museum Finder"
+  spec.description   = "Browse a list of Smithsonian museums, then choose from the menu to view more details about a museum"
   spec.homepage      = "https://learn.co"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
