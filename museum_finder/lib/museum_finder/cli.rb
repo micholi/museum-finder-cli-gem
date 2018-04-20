@@ -13,7 +13,7 @@ class MuseumFinder::CLI
       until input == "exit"
       input = gets.strip
 
-      if input.to_i >= 1 && input.to_i <= MuseumFinder::Museum.all.length-1
+      if input.to_i >= 1 && input.to_i <= MuseumFinder::Museum.all.length
         museum = MuseumFinder::Museum.find(input.to_i)
         print_museum(museum)
       elsif input == "menu"
