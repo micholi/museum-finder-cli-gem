@@ -2,7 +2,7 @@
 
 ## Description
 
-This program is a Command Line Interface (CLI) app that enables users to browse the museums and galleries (and zoo!) operated by the Smithsonian Institution in Washington, DC and New York City. A main menu listing all Smithsonian properties will be displayed when the program begins. From there, users can choose an individual museum to view additional information including a brief description, highlights, location, and hours.
+This program is a Command Line Interface (CLI) that enables users to browse the museums and galleries (and zoo!) operated by the Smithsonian Institution in Washington, DC and New York City. A main menu listing all Smithsonian properties will be displayed when the program begins. From there, users can choose an individual museum to view additional information including a brief description, highlights, location, and hours.
 
 ## Installing and Running this Program
 
