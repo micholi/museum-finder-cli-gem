@@ -2,25 +2,24 @@
 
 ## Description
 
-This program is Command Line Interface (CLI) app that enables users to browse the museums and galleries (and zoo!) operated by the Smithsonian Institution in Washington, DC and New York City. From the main menu, users can choose an individual museum and view information including a brief description, highlights, location, and hours.
+This program is a Command Line Interface (CLI) app that enables users to browse the museums and galleries (and zoo!) operated by the Smithsonian Institution in Washington, DC and New York City. A main menu listing all Smithsonian properties will be displayed when the program begins. From there, users can choose an individual museum to view additional information including a brief description, highlights, location, and hours.
 
-## Installation
+## Installing and Running this Program
 
-You can install this gem by entering the following:
+1. Clone a copy of the following repo onto your machine:
 
-    $ gem install museum-finder
+https://github.com/micholi/museum-finder-cli-gem
 
-## Usage
+2. Change directories with the following commands:
 
-Once you've installed the gem, enter the following and follow the instructions to interact with the CLI.
+cd museum-finder-cli-gem
+cd museum_finder
 
-  $ museum-finder
+3. Enter this command:
 
-## Development
+./bin/museum-finder
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+4. Follow the instructions that appear on screen to get started!
 
 ## Contributing
 
