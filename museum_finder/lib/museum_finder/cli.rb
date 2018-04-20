@@ -12,7 +12,6 @@ class MuseumFinder::CLI
       input = nil
       until input == "exit"
       input = gets.strip
-
       if input.to_i >= 1 && input.to_i <= MuseumFinder::Museum.all.length
         museum = MuseumFinder::Museum.find(input.to_i)
         print_museum(museum)
@@ -21,6 +20,8 @@ class MuseumFinder::CLI
       elsif input != "exit"
         puts "Sorry, I don't recognize your entry. Please try again.".colorize(:red)
       end
+
+      another_museum?
     end
     goodbye
   end
@@ -57,8 +58,6 @@ class MuseumFinder::CLI
       puts "Admission: ".colorize(:yellow) + "#{museum.admission}"
       puts "More Info: ".colorize(:yellow) + "#{museum.url}"
       puts "\n"
-
-      another_museum?
     end
 
     def another_museum?
