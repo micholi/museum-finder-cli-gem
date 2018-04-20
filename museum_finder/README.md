@@ -1,6 +1,8 @@
 # Smithsonian Museum Finder
 
-This Ruby gem provides a CLI that enables users to browse the museums and galleries (and zoo!) that are operated by the Smithsonian Institution. From the main menu, users can choose an individual museum and view information including a brief description, highlights, location, and hours.
+## Description
+
+This program is Command Line Interface (CLI) app that enables users to browse the museums and galleries (and zoo!) operated by the Smithsonian Institution in Washington, DC and New York City. From the main menu, users can choose an individual museum and view information including a brief description, highlights, location, and hours.
 
 ## Installation
 
