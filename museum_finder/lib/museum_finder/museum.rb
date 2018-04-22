@@ -1,6 +1,6 @@
 class MuseumFinder::Museum
 
-  attr_accessor :name, :url, :location, :hours, :admission, :description, :highlights
+  attr_accessor :name, :url, :location, :full_name, :hours, :admission, :description, :highlights
 
   @@all = []
 
@@ -8,23 +8,11 @@ class MuseumFinder::Museum
       @name = name
       @url = url
       @location = location
-    end
-
-    def self.create_museums
-      museums = MuseumFinder::Scraper.scrape_landing_page
-
-        museums.css("div.b-text-wrapper").each do |m|
-          museum = self.new(
-          m.css("h3.title").text,
-          "https://www.si.edu#{m.css("h3.title a").attribute("href").text}",
-          m.css("p.location").children[0].text.delete("\n").strip
-          )
-          museum.save
-        end
+      save
     end
 
     def self.all
-      @@all ||= self.new_museum
+      @@all
     end
 
     def save
