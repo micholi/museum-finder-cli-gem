@@ -7,7 +7,10 @@ class MuseumFinder::CLI
     end
 
   def start
-      print_menu
+    x = 0
+    y = 4
+    #y = MuseumFinder::Museum.all.length
+      print_menu(x,y)
 
       input = nil
       until input == "exit"
@@ -35,11 +38,14 @@ class MuseumFinder::CLI
       puts "\n"
     end
 
-    def print_menu(limit)
+    def print_menu(lower, upper)
       puts "Which Smithsonian property do you wish to view?".colorize(:light_blue)
       MuseumFinder::Museum.all.each_with_index do |museum, index|
+        if index == lower || index <= upper
+
         puts " #{index + 1}. #{museum.name}"
       end
+    end
       puts "\n"
       puts "Please enter the number preceding the museum (or zoo) for more information."
       puts "Type 'exit' at any time to end this program."
