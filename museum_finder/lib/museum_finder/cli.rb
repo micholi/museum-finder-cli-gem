@@ -21,7 +21,6 @@ class MuseumFinder::CLI
         puts "Sorry, I don't recognize your entry. Please try again.".colorize(:red)
       end
 
-      another_museum?
     end
     goodbye
   end
@@ -58,6 +57,8 @@ class MuseumFinder::CLI
       puts "Admission: ".colorize(:yellow) + "#{museum.admission}"
       puts "More Info: ".colorize(:yellow) + "#{museum.url}"
       puts "\n"
+
+      another museum?
     end
 
     def another_museum?
