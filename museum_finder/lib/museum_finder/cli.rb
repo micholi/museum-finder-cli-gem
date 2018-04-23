@@ -9,12 +9,20 @@ class MuseumFinder::CLI
   def start
     x = 0
     y = 4
-    #y = MuseumFinder::Museum.all.length
-      print_menu(x,y)
+    print_menu(x, y)
+
+    until y >= MuseumFinder::Museum.all.length
+    menu_input = gets.strip
+      if menu_input == "more"
+        x += 5
+        y += 5
+        print_menu(x, y)
+      end
+    end
 
       input = nil
       until input == "exit"
-      input = gets.strip
+        input = gets.strip
       if input.to_i >= 1 && input.to_i <= MuseumFinder::Museum.all.length
         museum = MuseumFinder::Museum.find(input.to_i)
         print_museum(museum)
@@ -41,13 +49,13 @@ class MuseumFinder::CLI
     def print_menu(lower, upper)
       puts "Which Smithsonian property do you wish to view?".colorize(:light_blue)
       MuseumFinder::Museum.all.each_with_index do |museum, index|
-        if index == lower || index <= upper
-
-        puts " #{index + 1}. #{museum.name}"
-      end
+        if index >= lower && index <= upper
+          puts " #{index + 1}. #{museum.name}"
+        end
     end
       puts "\n"
       puts "Please enter the number preceding the museum (or zoo) for more information."
+      puts "Or type 'more' to see more museums" unless upper >= MuseumFinder::Museum.all.length
       puts "Type 'exit' at any time to end this program."
 
     end
