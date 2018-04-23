@@ -13,12 +13,11 @@ class MuseumFinder::CLI
 
     print_menu(x, y)
 
-    until input == "exit" || until y >= MuseumFinder::Museum.all.length
+    until input == "exit"
+      #until y >= MuseumFinder::Museum.all.length
       input = gets.strip
 
-  #  until y >= MuseumFinder::Museum.all.length
-
-      if input == "more"
+      elsif input == "more"
         x += 5
         y += 5
         print_menu(x, y)
@@ -36,10 +35,12 @@ class MuseumFinder::CLI
         print_all
 
       elsif input != "exit"
+  
         puts "Sorry, I don't recognize your entry. Please try again.".colorize(:red)
-      end
+
+    #end
     end
-    end
+  end
     goodbye
   end
 
