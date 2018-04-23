@@ -25,6 +25,8 @@ class MuseumFinder::CLI
         museum = MuseumFinder::Museum.find(input.to_i)
         print_museum(museum)
       elsif input == "menu"
+        x = 0
+        y = 4
         print_menu(x,y)
       elsif input != "exit"
         puts "Sorry, I don't recognize your entry. Please try again.".colorize(:red)
@@ -95,7 +97,7 @@ class MuseumFinder::CLI
       puts "More Info: ".colorize(:yellow) + "#{museum.url}"
       puts "\n"
 
-      another museum?
+      another_museum?
     end
 
     def another_museum?
