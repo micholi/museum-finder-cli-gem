@@ -13,7 +13,7 @@ class MuseumFinder::CLI
 
     print_menu(x, y)
 
-    until y >= MuseumFinder::Museum.all.length || input == "exit"
+    until y >= MuseumFinder::Museum.all.length && input == "exit"
     input = gets.strip
 
       if input == "more"
