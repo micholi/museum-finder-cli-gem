@@ -14,10 +14,9 @@ class MuseumFinder::CLI
     print_menu(x, y)
 
     while input != "exit"
-      #&& y <= MuseumFinder::Museum.all.length-1
       input = gets.strip
 
-      if input == "more" && y <= MuseumFinder::Museum.all.length-1
+      if input == "more" && y < MuseumFinder::Museum.all.length-1
         x += 5
         y += 5
         print_menu(x, y)
@@ -38,7 +37,6 @@ class MuseumFinder::CLI
         puts "Sorry, I don't recognize your entry. Please try again.".colorize(:red)
 
       end
-    #end
     end
     goodbye
   end
@@ -50,10 +48,10 @@ class MuseumFinder::CLI
       puts "The Smithsonian Institution is the world's largest museum, education, and research complex."
       puts "The Smithsonian offers 17 museums, galleries, and a zoo in the Greater Washington, DC area "
       puts "and 2 additional museums in New York City."
-      puts "\n"
     end
 
     def print_menu(lower, upper)
+      puts "\n"
       puts "Which Smithsonian property do you wish to view?".colorize(:light_blue) if lower == 0
       puts "Displaying museums #{lower+1} to #{upper+1} (of #{MuseumFinder::Museum.all.length}):".colorize(:yellow)
 
@@ -65,8 +63,10 @@ class MuseumFinder::CLI
 
       puts "Type 'more' to see the next 5 museums." unless upper >= MuseumFinder::Museum.all.length
       puts "\n"
+      puts "OR"
       puts "To choose one of the museums above, enter its number."
       puts "Type 'all' to list all museums or 'exit' to end this program."
+      puts "\n"
     end
 
     def print_all
