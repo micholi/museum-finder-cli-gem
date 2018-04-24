@@ -7,28 +7,28 @@ class MuseumFinder::CLI
   end
 
   def start
-    x = 0
-    y = 4
+    lower = 0
+    upper = 4
     input = nil
 
-    print_menu(x, y)
+    print_menu(lower, upper)
 
     while input != "exit"
       input = gets.strip
 
-      if input == "more" && y < MuseumFinder::Museum.all.length-1
-        x += 5
-        y += 5
-        print_menu(x, y)
+      if input == "more" && upper < MuseumFinder::Museum.all.length-1
+        lower += 5
+        upper += 5
+        print_menu(lower, upper)
 
       elsif input.to_i >= 1 && input.to_i <= MuseumFinder::Museum.all.length
         museum = MuseumFinder::Museum.find(input.to_i)
         print_museum(museum)
 
       elsif input == "menu"
-        x = 0
-        y = 4
-        print_menu(x,y)
+        lower = 0
+        upper = 4
+        print_menu(lower, upper)
 
       elsif input != "exit"
         puts "Sorry, I don't recognize your entry. Please try again.".colorize(:red)
