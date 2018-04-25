@@ -21,6 +21,10 @@ class MuseumFinder::CLI
         upper += 5
         print_menu(lower, upper)
 
+      elsif input == "more" && upper >= MuseumFinder::Museum.all.length-1
+        puts "You've reached the end of the listings.".colorize(:red)
+        puts "Enter a number to view a museum or type 'menu' to start over."
+
       elsif input.to_i >= 1 && input.to_i <= MuseumFinder::Museum.all.length
         museum = MuseumFinder::Museum.find(input.to_i)
         print_museum(museum)
@@ -59,8 +63,7 @@ class MuseumFinder::CLI
 
       puts "Type 'more' to see the next 5 museums.".colorize(:yellow) unless upper >= MuseumFinder::Museum.all.length
       puts "\n"
-      puts "Enter a number to view more info about a museum."
-      puts "To end this program, type 'exit'."
+      puts "Enter a number for more info about a museum or type 'exit' to end the program."
       puts "\n"
     end
 
@@ -81,7 +84,7 @@ class MuseumFinder::CLI
     end
 
     def another_museum?
-      puts "Would you like to see another museum? Enter its number below."
+      puts "To view another museum, enter its number below."
       puts "Type 'menu' to return to the Main Menu or 'exit' to end this program."
       puts "\n"
     end
