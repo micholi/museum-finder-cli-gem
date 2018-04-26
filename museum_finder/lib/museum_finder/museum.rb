@@ -5,8 +5,8 @@ class MuseumFinder::Museum
   @@all = []
 
     def initialize(museum_hash)
-      museum_hash.each do |key, value|
-        self.send("#{key}=", value)
+      museum_hash.each do |attribute, value|
+        self.send("#{attribute}=", value)
       end
 
       @@all << self
@@ -19,8 +19,8 @@ class MuseumFinder::Museum
     end
 
     def add_museum_attributes
-      MuseumFinder::Scraper.scrape_museum_page(self.url).each do |key, value|
-        self.send("#{key}=", value)
+      MuseumFinder::Scraper.scrape_museum_page(self.url).each do |attribute, value|
+        self.send("#{attribute}=", value)
       end
     end
 
