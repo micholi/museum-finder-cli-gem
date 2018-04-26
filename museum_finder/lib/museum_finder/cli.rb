@@ -1,7 +1,7 @@
 class MuseumFinder::CLI
 
   def call
-    MuseumFinder::Museum.create_museums
+    make_museums
     greeting
     start
   end
@@ -27,7 +27,7 @@ class MuseumFinder::CLI
 
       elsif input.to_i >= 1 && input.to_i <= MuseumFinder::Museum.all.length
         museum = MuseumFinder::Museum.find(input.to_i)
-        add_museum_attributes(museum)
+        get_museum_attributes(museum)
         print_museum(museum)
 
       elsif input == "menu"
@@ -42,7 +42,11 @@ class MuseumFinder::CLI
     goodbye
   end
 
-  def add_museum_attributes(museum)
+  def make_museums
+    MuseumFinder::Museum.create_museums
+  end
+
+  def get_museum_attributes(museum)
     museum.add_museum_attributes
   end
 
