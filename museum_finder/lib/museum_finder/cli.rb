@@ -1,7 +1,8 @@
 class MuseumFinder::CLI
 
   def call
-    MuseumFinder::Scraper.scrape_landing_page
+    #MuseumFinder::Scraper.scrape_landing_page
+    MuseumFinder::Museum.create_museums
     greeting
     start
   end
@@ -27,6 +28,8 @@ class MuseumFinder::CLI
 
       elsif input.to_i >= 1 && input.to_i <= MuseumFinder::Museum.all.length
         museum = MuseumFinder::Museum.find(input.to_i)
+        add_museum_attributes(museum)
+
         print_museum(museum)
 
       elsif input == "menu"
@@ -41,6 +44,14 @@ class MuseumFinder::CLI
     end
     goodbye
   end
+
+  def add_museum_attributes(museum)
+    museum.add_museum_attributes
+    #  if museum_instance == museum
+    #    museum_instance.add_museum_attributes
+    #  end
+    #end
+    end
 
     def greeting
       puts "\n"
@@ -81,6 +92,10 @@ class MuseumFinder::CLI
       puts "\n"
 
       another_museum?
+    end
+
+    def get_museum(url)
+      MuseumFinder::Scraper.scrape_museum_page(url)
     end
 
     def another_museum?
