@@ -1,7 +1,6 @@
 class MuseumFinder::CLI
 
   def call
-    #MuseumFinder::Scraper.scrape_landing_page
     MuseumFinder::Museum.create_museums
     greeting
     start
@@ -17,7 +16,7 @@ class MuseumFinder::CLI
     while input != "exit"
       input = gets.strip
 
-      if input == "more" && upper < MuseumFinder::Museum.all.length-1
+      if input == "more" && upper <= MuseumFinder::Museum.all.length-1
         lower += 5
         upper += 5
         print_menu(lower, upper)
@@ -29,7 +28,6 @@ class MuseumFinder::CLI
       elsif input.to_i >= 1 && input.to_i <= MuseumFinder::Museum.all.length
         museum = MuseumFinder::Museum.find(input.to_i)
         add_museum_attributes(museum)
-
         print_museum(museum)
 
       elsif input == "menu"
@@ -39,7 +37,6 @@ class MuseumFinder::CLI
 
       elsif input != "exit"
         puts "Sorry, I don't recognize your entry. Please try again.".colorize(:red)
-
       end
     end
     goodbye
@@ -47,11 +44,7 @@ class MuseumFinder::CLI
 
   def add_museum_attributes(museum)
     museum.add_museum_attributes
-    #  if museum_instance == museum
-    #    museum_instance.add_museum_attributes
-    #  end
-    #end
-    end
+  end
 
     def greeting
       puts "\n"
