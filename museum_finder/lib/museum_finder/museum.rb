@@ -9,9 +9,7 @@ class MuseumFinder::Museum
         self.send("#{attribute}=", value)
 
 
-      #@name = name
-      #@url = url
-      #@location = location
+
 end
       @@all << self
     #end
@@ -20,28 +18,16 @@ end
     def self.create_museums
       MuseumFinder::Scraper.scrape_landing_page.each do |museum_hash|
         self.new(museum_hash)
-        #museum.name = name
-        #binding.pry
+
       end
     end
 
-  #  def self.get_museum_attributes
-    #  @@all.each do |museum|
-  #  create_museums
-      #  url = museum.url
-  #    hash = MuseumFinder::Scraper.scrape_museum_page(url)
-  #    hash.each do |key, value|
-  #      binding.pry
-  #      self.send("#{key}=", value)
-  #    end
-  #  end
+
 
 
 
 def add_museum_attributes
-  #create_museums
-  #get_museum_attributes
-#  @@all.each do |museum|
+
 
     url = self.url
     MuseumFinder::Scraper.scrape_museum_page(url).each do |key, value|
@@ -80,16 +66,12 @@ end
   #    @description ||= doc.css("div.info p").children[0].text
   #  end
 
-#    def highlights
-#      @highlights ||= doc.css("div.info p").children[1].text
-#    end
+
 
     def self.find(number)
       self.all[number-1]
     end
 
-#    def doc
-#      @doc ||= Nokogiri::HTML(open(self.url))
-#    end
+
 
 end
