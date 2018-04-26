@@ -16,7 +16,7 @@ class MuseumFinder::CLI
     while input != "exit"
       input = gets.strip
 
-      if input == "more" && upper <= MuseumFinder::Museum.all.length-1
+      if input == "more" && upper < MuseumFinder::Museum.all.length-1
         lower += 5
         upper += 5
         print_menu(lower, upper)
