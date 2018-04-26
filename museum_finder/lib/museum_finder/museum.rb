@@ -5,10 +5,10 @@ class MuseumFinder::Museum
   @@all = []
 
     def initialize(museum_hash)
-      museum_hash.each do |attribute, value|
-        self.send("#{attribute}=", value)
+      museum_hash.each do |key, value|
+        self.send("#{key}=", value)
       end
-      
+
       @@all << self
     end
 
