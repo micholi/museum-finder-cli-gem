@@ -21,7 +21,7 @@ class MuseumFinder::CLI
         upper += 5
         print_menu(lower, upper)
 
-      elsif input == "more" && upper >= MuseumFinder::Museum.all.length-1
+      elsif input == "more"
         puts "You've reached the end of the listings.".colorize(:red)
         puts "Enter a number to view a museum or type 'menu' to start over."
 
