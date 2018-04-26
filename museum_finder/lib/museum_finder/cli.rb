@@ -72,9 +72,11 @@ class MuseumFinder::CLI
         end
       end
 
-      puts "Type 'more' to see the next 5 museums.".colorize(:yellow) unless upper >= MuseumFinder::Museum.all.length
+      puts "Type 'more' to see the next 5 museums.".colorize(:yellow) unless upper >= MuseumFinder::Museum.all.length-1
+      puts "End of museum listings.".colorize(:yellow) if upper >= MuseumFinder::Museum.all.length-1
       puts "\n"
-      puts "Enter a number for more info about a museum or type 'exit' to end the program."
+      puts "Enter a number to view more information about a museum."
+      puts "Type 'menu' to start over or 'exit' to end the program."
       puts "\n"
     end
 

@@ -21,9 +21,7 @@ class MuseumFinder::Scraper
   end
 
   def self.scrape_museum_page(url)
-    #url = "https://www.si.edu/museums/african-american-history-and-culture-museum"
     doc = Nokogiri::HTML(open(url))
-    #doc = Nokogiri::HTML(open("https://www.si.edu/museums/african-american-history-and-culture-museum"))
 
     full_name = doc.css("h1.page-title").text
     hours = doc.css("div.location-hours").text.gsub(/\r\n/," - ").strip
@@ -31,9 +29,8 @@ class MuseumFinder::Scraper
     description = doc.css("div.info p").children[0].text
     highlights = doc.css("div.info p").children[1].text
 
-    listing = {:full_name => full_name, :hours => hours, :admission => admission, :description => description, :highlights => highlights}
-    listing
-    #binding.pry
+    museum_listing = {:full_name => full_name, :hours => hours, :admission => admission, :description => description, :highlights => highlights}
+    museum_listing
   end
 
 end
