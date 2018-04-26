@@ -60,8 +60,10 @@ class MuseumFinder::CLI
   end
 
   def print_menu(lower, upper)
+    total = MuseumFinder::Museum.all.length
     puts "\n"
-    puts "Displaying museums #{lower+1} to #{upper+1} (of #{MuseumFinder::Museum.all.length}):".colorize(:light_blue)
+    puts "Displaying museums #{lower+1} to #{upper+1} (of #{total}):".colorize(:light_blue) if upper <= total
+    puts "Displaying museums #{lower+1} to #{total} (of #{total}):".colorize(:light_blue) if upper > total
 
     MuseumFinder::Museum.all.each_with_index do |museum, index|
       if index >= lower && index <= upper
