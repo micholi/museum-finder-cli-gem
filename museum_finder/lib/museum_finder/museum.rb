@@ -11,8 +11,9 @@ class MuseumFinder::Museum
 
 
 end
+
       @@all << self
-    #end
+
     end
 
     def self.create_museums
@@ -50,21 +51,6 @@ end
 
 
 
-  #  def full_name
-  #    @full_name ||= doc.css("h1.page-title").text
-  #  end
-
-    #def hours
-    #  @hours ||= doc.css("div.location-hours").text.gsub(/\r\n/," - ").strip
-    #end
-
-  #  def admission
-  #    @admission ||= doc.css("div.location-admission").text.delete("\n").strip
-  #  end
-
-  #  def description
-  #    @description ||= doc.css("div.info p").children[0].text
-  #  end
 
 
 
