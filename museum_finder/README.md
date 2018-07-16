@@ -12,7 +12,7 @@ https://github.com/micholi/museum-finder-cli-gem
 
 2. Change directories with the following commands:
 
-cd museum-finder-cli-gem
+cd museum-finder-cli-gem<br/>
 cd museum_finder
 
 3. Enter this command:
